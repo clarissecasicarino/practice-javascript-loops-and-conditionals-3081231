@@ -24,6 +24,31 @@
         * Report the month at which principal becomes >= interest
         * 
         */
+
+       let principal = parseFloat(prompt("Enter amount of loan"));
+       let years = parseInt(prompt("Enter number of years"));
+       let apr = parseFloat(prompt("Enter apr"));
+
+       let monthlyRate = (apr / 12) / 100;
+       let months = years * 12;
+
+       let payment = (monthlyRate * principal) / (1 - Math.pow(1 + monthlyRate, -months));
+       display("Monthly payment is $" + payment.toFixed(2));
+       display(payment);
+        let monthNumber = 0;
+        let interestPart = 0;
+        let principalPart = 0;
+       
+       do {
+            interestPart = principal * monthlyRate;
+            principalPart = payment - interestPart;
+            principal = principal - principalPart;
+            monthNumber++;
+            display("month " + monthNumber + " Interest: $" +
+                interestPart.toFixed(2)
+                + " Principal: $" + principalPart.toFixed(2));
+       } while (interestPart > principalPart);
+       display("The break-even point happens at month " + monthNumber);
         
         </script>
     </body>
