@@ -24,8 +24,18 @@
  *       "Funds may be on hold for three days."
  *   - Add the deposit amount to the balance.
  *   - Report the updated balance to the customer.
- */
+ */ 
+      const amount = 10000;
+      var currentBal = prompt("Enter current balance");
+      let convertedInputBal = parseFloat(currentBal);
 
+      var depositAmount = parseFloat(prompt("Enter amount to deposit"));
+
+      if (depositAmount >= amount) {
+          display("Funds may be on hold for three days.");
+      }
+      newBalance = convertedInputBal + depositAmount;
+      display("Balance is now $" + newBalance);
         </script>
     </body>
 </html>

@@ -26,7 +26,17 @@
  *       - tell the customer they can't withdraw more than
  *         their balance.
  *   - Print a "Thank you for banking with us" message
- */
+*/
+        let currentBal = parseFloat(prompt("Enter current balance"));
+        let amountToWithdraw = parseFloat(prompt("Enter amount to withdraw"));
+
+        if (amountToWithdraw <= currentBal) {
+            updatedBal = currentBal - amountToWithdraw;
+            display("Your balance is now $" + updatedBal + "." + "\nThank you for banking with us.");
+        } else {
+            display("Cannot withdraw $" + amountToWithdraw + "." + "\nYou only have $" + currentBal + ", sorry." + 
+            "\nThank you for banking with us.");
+        }
 
         </script>
     </body>

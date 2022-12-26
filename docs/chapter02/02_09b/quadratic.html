@@ -27,6 +27,25 @@
  *        (-b + sqrt(b^2 - 4ac)) / 2a and
  *        (-b - sqrt(b^2 - 4ac) / 2a
  */
+        let a = parseInt(prompt("Enter a"));
+        let b = parseInt(prompt("Enter b"));
+        let c = parseInt(prompt("Enter c"));
+
+        display(a + "x^2 + " + b + "x + " + c + " = 0");
+
+        discriminant = Math.pow(b, 2) - 4 * a * c;
+        
+        if (discriminant < 0) {
+            display("There are no real number solutions");
+        } else if (discriminant === 0) {
+            let root = -b / (2 * a);
+            display("The solution is " + root + ".");
+        } else if (discriminant > 0) {
+            let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            display("The solutions are " + root1 + " and " + root2 + ".");
+        }
+
         </script>
     </body>
 </html>
