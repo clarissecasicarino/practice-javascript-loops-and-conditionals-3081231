@@ -22,6 +22,21 @@
  *   - add one to the number of steps
  * Print the final number of steps
  */
-        </script>
+        let number = parseInt(prompt("Enter an integer greater than zero"));
+        display("Number starts at " + number);
+
+        let steps = 0;
+
+        while (number != 1) {
+            if (number % 2 == 0) {
+                number = number / 2;
+            } else {
+                number = number * 3 + 1;
+            }
+            display("Number is now " + number);
+            steps = steps + 1;
+        }
+        display("Number of steps taken: " + steps);
+    </script>
     </body>
 </html>

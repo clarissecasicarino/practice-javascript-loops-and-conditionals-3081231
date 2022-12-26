@@ -33,6 +33,35 @@
  *          display balance;
  *      }
  */
+    let balance = parseFloat(prompt("Enter balance"));
+    let chooseTransaction = prompt("Choose your transaction. Type D for deposit or W for withdrawal");
+    let transaction = chooseTransaction.toUpperCase();
+
+    if (transaction == "D") {
+        let depositAmount = parseFloat(prompt("Enter amount to deposit"));
+        if (depositAmount < 0) {
+            display("Amount cannot be negative.");
+        } else {
+            if (depositAmount >= 0 && depositAmount >= 10000){
+            display("Funds may be on hold for three days.");
+            } 
+            let newBal = balance + depositAmount;
+            display("Balance is now $" + newBal + ".");
+        }  
+    } else if (transaction == "W") {
+        let amount = parseFloat(prompt("Enter amount to withdraw"));
+        if (amount < 0) {
+            display("You can't withdraw a negative amount");
+        } else if (amount > balance) {
+            display("You can't withdraw more than your balance of $" + balance);
+        } else {
+            //valid amt
+            let newBal = balance - amount;
+            display("Balance is now $" + newBal + ".");
+        }
+    } else {
+        display("Invalid transaction: " + chooseTransaction + "\nUse D for deposit or W for withdrawal");
+    }
         </script>
     </body>
 </html>
