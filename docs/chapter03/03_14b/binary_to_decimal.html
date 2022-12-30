@@ -17,6 +17,31 @@
  * convert it to a decimal, using an indexed for loop.
  */
 
+let binaryStr = prompt("Enter a binary number");
+let decimal = 0;
+let factor = 1;
+let valid = true;
+
+ for (let index = binaryStr.length - 1; index >= 0;  index--) {
+    let chr = binaryStr[index];
+    if (chr == "0" || chr == "1") {
+        let digit = parseInt(chr);
+        decimal = decimal + digit * factor;
+        factor = factor * 2;
+    } else if (chr != " ") {
+        display(chr + " is not allowed. Use only 0, 1, and blanks.");
+        valid = false;
+    } else {
+        // it's a blank; no need to do anything
+    }
+ }
+
+    if (valid) {
+        display(binaryStr + " in binary is " + decimal + " in decimal.");
+    } else {
+        display("Invalid input.");
+    }
+
         </script>
     </body>
 </html>

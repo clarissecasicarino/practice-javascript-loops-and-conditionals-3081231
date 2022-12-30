@@ -26,6 +26,29 @@
  * Add 5% sales tax
  * Display the total
  */
+    let subtotal = 0.0;
+    let nItems = 0;
+    let price = 0.0;
+
+    do {
+        price = parseFloat(prompt("Enter item price " + (nItems + 1)));
+        if (price > 0) {
+            nItems++;
+            subtotal = subtotal + price;
+        } else if (price < 0) {
+            display("Negative prices are not allowed")
+        } else {
+            // sentinel value entered
+        }
+    } while (nItems <= 20 && price != 0.0);
+    let tax = subtotal * 0.05;
+    let total = subtotal + tax;
+
+    display("Items purchase: " + nItems);
+    display("Subtotal: $" + subtotal.toFixed(2));
+    display("Tax: $" + tax.toFixed(2));
+    display("Total: $" + total.toFixed(2));
+
         </script>
     </body>
 </html>

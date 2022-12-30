@@ -19,8 +19,31 @@
  * values for those months.
  */
 
-let sales = [17.2, 16.5, 18.3, 19.3, 17.8, 21.3, 22.4,
+    let sales = [17.2, 16.5, 18.3, 19.3, 17.8, 21.3, 22.4,
    22.0, 19.9, 23.3, 21.7, 22.2];
+
+   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+    let minIndex = -1;
+    let minValue = sales[0];
+
+    let maxIndex = -1;
+    let maxValue = sales[0];
+
+    for (let index = 1; index < sales.length; index++) {
+        if (sales[index] < minValue) {
+            minValue = sales[index];
+            minIndex = index;
+        } 
+        
+        if (sales[index] > maxValue) {
+            maxValue = sales[index]
+            maxIndex = index;
+        }
+    }
+
+    display("Minimum sales $" + minValue + "K in month " + monthNames[minIndex]);
+    display("Maximum sales $" + maxValue + "K in month " + monthNames[maxIndex]);
 
         </script>
     </body>
